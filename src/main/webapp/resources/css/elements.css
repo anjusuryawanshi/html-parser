@@ -14,3 +14,15 @@
 .tag-depth {
     margin-left: 5px;
 }
+
+.tagcount {
+    width: 100%;
+}
+
+.tagcount:hover {
+    background-color: #888888;
+}
+
+.tag-highlight {
+    background-color: #777777;
+}

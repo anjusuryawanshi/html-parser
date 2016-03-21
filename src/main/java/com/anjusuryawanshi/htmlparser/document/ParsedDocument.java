@@ -17,11 +17,13 @@
 package com.anjusuryawanshi.htmlparser.document;
 
 import java.util.List;
+import java.util.Map;
 
 public class ParsedDocument {
 
   private String title;
   private List<TagDescription> tags;
+  private Map<String, Integer> tagCounts;
 
   public String getTitle() {
     return title;
@@ -29,6 +31,10 @@ public class ParsedDocument {
 
   public List<TagDescription> getTags() {
     return tags;
+  }
+
+  public Map<String, Integer> getTagCounts() {
+    return tagCounts;
   }
 
   public static Builder builder() {
@@ -49,9 +55,13 @@ public class ParsedDocument {
       return this;
     }
 
+    public Builder tagCounts(Map<String, Integer> tagCounts) {
+      document.tagCounts = tagCounts;
+      return this;
+    }
+
     public ParsedDocument build() {
       return document;
     }
-
   }
 }
