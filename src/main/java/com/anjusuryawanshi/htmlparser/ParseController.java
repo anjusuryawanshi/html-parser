@@ -16,8 +16,6 @@
 
 package com.anjusuryawanshi.htmlparser;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,14 +28,7 @@ public class ParseController {
   @RequestMapping("/parse")
   public ModelAndView parse(@RequestParam String url) throws ParseException {
     try {
-      Document doc = Jsoup.connect(url).get();
-      String title = doc.title();
-
-      ParsedDocument document = ParsedDocument.builder()
-          .title(title)
-          .build();
-
-      return new ModelAndView("parsed", "document", document);
+      return new ModelAndView("parsed", "document", new HtmlParser().parse(url));
     } catch (IOException e) {
       throw new ParseException("unable to parse document for url " + url, e);
     }

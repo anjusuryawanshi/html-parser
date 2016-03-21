@@ -14,14 +14,21 @@
  * limitations under the License.
  */
 
-package com.anjusuryawanshi.htmlparser;
+package com.anjusuryawanshi.htmlparser.document;
+
+import java.util.List;
 
 public class ParsedDocument {
 
   private String title;
+  private List<TagDescription> tags;
 
   public String getTitle() {
     return title;
+  }
+
+  public List<TagDescription> getTags() {
+    return tags;
   }
 
   public static Builder builder() {
@@ -34,6 +41,11 @@ public class ParsedDocument {
 
     public Builder title(String title) {
       document.title = title;
+      return this;
+    }
+
+    public Builder tags(List<TagDescription> tags) {
+      document.tags = tags;
       return this;
     }
 

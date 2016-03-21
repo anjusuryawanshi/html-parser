@@ -1,0 +1,16 @@
+.htmltag {
+    width: 100%;
+}
+
+.htmltag {
+    margin: 0;
+    padding: 0;
+}
+
+.htmltag-attribute {
+    padding-left: 10px;
+}
+
+.tag-depth {
+    margin-left: 5px;
+}
